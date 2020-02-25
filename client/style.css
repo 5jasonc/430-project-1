@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body, header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	margin: 30px 0;
+}
+
+h2, h3 {
+	margin-bottom: 15px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	-webkit-user-drag: none;
+}
+
+#content {
+	width: 100%;
+}
+
+#gameList {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+#reviewsPage {
+	display: flex;
+	justify-content: center;
+}
+
+.game {
+	border: 1px solid black;
+	padding: 15px;
+	margin: 0 1em 1em 1em;
+	width: 200px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+}
+
+.game:not(#submitGame) {
+	user-select: none;
+	cursor: pointer;
+}
+
+.game:not(#submitGame):hover {
+	border: 1px solid red;
+	background: lightgray;
+}
+
+.game:not(#submitGame):hover h3 {
+	color: red;
+}
+
+#gameInfo, #reviews {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 15px;
+}
+
+#reviews {
+	margin-left: 0px;
+	align-items: flex-end;
+	width: 40%;
+}
+
+#gameInfo {
+	border: 1px solid black;
+	padding: 15px;
+	width: 30%;
+}
+
+.review, #submitReview {
+	border: 1px solid black;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	padding: 15px 15px 35px 15px;
+	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.review h3 {
+	margin-bottom: 5px;
+}
+
+.review .score {
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	margin-bottom: 0;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "430-project-1",
+  "version": "1.0.0",
+  "description": "Game Review App for project 1 of IGME 430",
+  "main": "index.js",
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.13.0"
+  },
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5jasonc/430-project-1.git"
+  },
+  "author": "Jason Streeter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5jasonc/430-project-1/issues"
+  },
+  "homepage": "https://github.com/5jasonc/430-project-1#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
