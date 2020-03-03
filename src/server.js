@@ -5,6 +5,7 @@ const responseHandler = require('./responses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
+// Used to call correct response based on request URL
 const urlStruct = {
   '/': responseHandler.getIndex,
   '/style.css': responseHandler.getStyle,
@@ -16,6 +17,7 @@ const urlStruct = {
   getNotReal: responseHandler.getNotReal,
 };
 
+// Calls proper response function when client request is POST
 const handlePost = (request, response, parsedURL) => {
   const body = [];
 
@@ -29,6 +31,7 @@ const handlePost = (request, response, parsedURL) => {
     body.push(chunk);
   });
 
+  // Sends parameters as url encoded form
   request.on('end', () => {
     const bodyString = Buffer.concat(body).toString();
     const bodyParams = query.parse(bodyString);
@@ -41,6 +44,7 @@ const handlePost = (request, response, parsedURL) => {
   });
 };
 
+// Calls proper response function when client request is GET or HEAD
 const handleGet = (request, response, parsedURL) => {
   const params = query.parse(parsedURL.query);
 
@@ -51,6 +55,7 @@ const handleGet = (request, response, parsedURL) => {
   }
 };
 
+// Determines if request is GET/HEAD or POST and calls proper function
 const onRequest = (request, response) => {
   const parsedURL = url.parse(request.url);
 
@@ -61,5 +66,6 @@ const onRequest = (request, response) => {
   }
 };
 
+// Starts our server
 http.createServer(onRequest).listen(port);
 console.log(`Listening on 127.0.0.1:${port}`);

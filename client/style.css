@@ -9,6 +9,7 @@ html, body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	background-color: #0D1321;
 }
 
 body, header {
@@ -21,8 +22,28 @@ header {
 	margin: 30px 0;
 }
 
+h1 {
+	font-size: 50px;
+	user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Oxanium", "OCR A Std", monospace;
+	color: #9CFC97;
+	word-wrap: break-word;
+}
+
 h2, h3 {
+	font-weight: lighter;
+}
+
+h2, h3:not(:last-child) {
 	margin-bottom: 15px;
+}
+
+p {
+	color: #E6FAFC;
+	font-family: "Roboto Mono", sans-serif;
 }
 
 img {
@@ -31,7 +52,32 @@ img {
 	-webkit-user-drag: none;
 }
 
-#content {
+input[type="text"] {
+	margin-bottom: 15px;
+}
+
+input[type="text"], input[type="submit"] {
+	background-color: #0D1321;
+	border: 2px solid #9CFC97;
+	padding: 5px;
+	color: #9CFC97;
+	font-family: "Roboto Mono", sans-serif;
+	word-wrap: break-word;
+}
+
+input[type="submit"]:hover {
+	border: 2px solid #E6FAFC;
+	background-color: #384E77;
+	color: #E6FAFC;
+}
+
+input[type="submit"]:active {
+	border: 2px solid #0D1321;
+	background-color: #E6FAFC;
+	color: #0D1321;
+}
+
+#content, input[type="text"], #backButton, #submitGameButton {
 	width: 100%;
 }
 
@@ -46,8 +92,12 @@ img {
 	justify-content: center;
 }
 
+.game, #gameInfo, .review, #submitReview, #submitGame {
+	background-color: #0F223D;
+	border: 3px solid #9CFC97;
+}
+
 .game {
-	border: 1px solid black;
 	padding: 15px;
 	margin: 0 1em 1em 1em;
 	width: 200px;
@@ -59,18 +109,27 @@ img {
 	overflow: hidden;
 }
 
+.game h3 {
+	word-break: break-word;
+}
+
 .game:not(#submitGame) {
 	user-select: none;
 	cursor: pointer;
 }
 
 .game:not(#submitGame):hover {
-	border: 1px solid red;
-	background: lightgray;
+	border: 3px solid #E6FAFC;
+	background-color: #384E77;
+	
 }
 
 .game:not(#submitGame):hover h3 {
-	color: red;
+	color: #E6FAFC;
+}
+
+#submitGame {
+	justify-content: center;
 }
 
 #gameInfo, #reviews {
@@ -88,24 +147,41 @@ img {
 }
 
 #gameInfo {
-	border: 1px solid black;
 	padding: 15px;
 	width: 30%;
+	height: fit-content;
+}
+
+#gameInfo h2 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#backButton, #gameInfo img {
+	margin-bottom: 15px;
 }
 
 .review, #submitReview {
-	border: 1px solid black;
 	text-align: left;
 	display: flex;
 	flex-direction: column;
-	padding: 15px 15px 35px 15px;
+	padding: 15px;
 	position: relative;
 	width: 100%;
 	margin-bottom: 15px;
 }
 
-.review h3 {
+.review:not(#submitReview) {
+	padding-bottom: 40px;
+}
+
+.review h3:not(.score) {
 	margin-bottom: 5px;
+	font-size: 25px;
+}
+
+#submitReview h3 {
+	font-size: 25px;
 }
 
 .review .score {
@@ -113,4 +189,48 @@ img {
 	bottom: 10px;
 	right: 15px;
 	margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+	#gameInfo h2 {
+		font-weight: bold;
+		font-size: 30px;
+	}
+	
+	.review h3:not(.score), #submitReview h3 {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	#reviewsPage {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	#reviewsPage div {
+		width: 70%;
+	}
+	
+	#reviews {
+		width: 100%;
+		margin: 15px;
+	}
+	
+	.review, #submitReview {
+		width: 100% !important;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#gameInfo h2 {
+		font-weight: bold;
+		font-size: 25px;
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	h1 {
+		font-size: 35px;
+	}
 }

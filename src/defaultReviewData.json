@@ -46,5 +46,21 @@
 			"review": "There's a lot to do but not enough action. COD is way better than this piece of trash!!!"
 		  }
 		}
+	  },
+	  "Subnautica": {
+		"title": "Subnautica",
+		"image": "https://store-images.s-microsoft.com/image/apps.24838.63409341877910445.4fd452e1-c3ee-4448-a0f8-ac6eb6bdaabf.d531d87c-d1b7-497f-b802-baabfb728090",
+		"reviews": {
+		  "Jason Streeter": {
+			"user": "Jason Streeter",
+			"score": "8",
+			"review": "Very atmospheric, great environments and creature design. Grinding for resources gets repetitive though."
+		  },
+		  "Gabe Newell": {
+			"user": "FishDude47",
+			"score": "5",
+			"review": "Pretty cool, but sadly not very realistic."
+		  }
+		}
 	  }
 }
